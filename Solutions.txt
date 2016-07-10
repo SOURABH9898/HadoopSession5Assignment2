@@ -1,0 +1,13 @@
+Reoure Manager:
+
+A client submits an application to the resource manager.
+
+Namenode is the master node on which the Resource manager executes. It hold the metadata of the files stored in the filesystem tree. This information is stored persistantly on the local disk
+It holds information about the datanodes on which all the blocks for the given files are located. Since this information is reconstructed from datanodes when system starts, this information is not persistantly stored.
+
+Datanode is the workhorse of the filesystem. It stores and retrieve blocks when requested by client or name node and periodicaly report back to the namenode with the list of blocks stored. The Node manager runs on data node. 
+
+The resource manager then schedules and finds a computing resource on cluster that can run the application.
+
+the node manager launch and monitor compute containers on the cluster. It can request more containers from the resource managers and use them to run a distributed computation.
+
